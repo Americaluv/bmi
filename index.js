@@ -7,10 +7,11 @@ function kakeru(f)
 {sintyo2=parseFloat(f.height.value) * parseFloat(f.height.value);
     f.bmid.value=parseFloat(f.weight.value) / sintyo2;
 let bmi = document.getElementById("bmid").value;
+f.tekisei.value = sintyo2 * 22 ;
 if ( bmi === 0 ) {
     msg = "ここにあなたの状態を表示します";
 } else if ( 1 <= bmi && bmi < 16 ) {
-    msg = "瘦せすぎ！！";
+    msg = "瘦せすぎ";
 } else if ( 16 <= bmi && bmi < 17 ) {
     msg = "瘦せ";
 } else if ( 17 <= bmi && bmi < 18.5 ) {
@@ -28,6 +29,7 @@ if ( bmi === 0 ) {
 } else {
     msg = "ここにあなたの状態を表示します";
 }
-document.getElementById("jyoutai").textContent = msg;
+document.getElementById("jyoutai").textContent = ("あなたの体型は" + msg + "です")
 console.log(bmi);
+console.log(tekisei);
 }
